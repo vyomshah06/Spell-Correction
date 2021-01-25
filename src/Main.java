@@ -24,7 +24,6 @@ public class Main {
 		HashSet<String> hs = new HashSet<String>();
 		
 		while ((str = br.readLine()) != null) { 
-			//System.out.println(st);
 			if(hs.add(str)) {
 				trie.insert(str);
 			}			
@@ -33,8 +32,7 @@ public class Main {
 		str = "";
 		System.out.print("Enter Text: ");		
 		String[] words = scan.nextLine().toLowerCase().replaceAll("\\p{Punct}", "").split(" ");	
-		scan.close();				
-		//ArrayList<String> correct_text = new ArrayList<String>();
+		scan.close();
 		
 		for (int i=0; i<words.length; i++) {			
 			boolean check = trie.search(words[i]);
@@ -49,12 +47,8 @@ public class Main {
 						str = s;
 					}
 				}
-				words[i] = str;				
-				//correct_text.add(correct_word);
+				words[i] = str;
 			}
-//			else {				
-//				correct_text.add(words[i]);
-//			}
 		}
 		if(flag == 1) {
 			System.out.println("Invalid String!");
